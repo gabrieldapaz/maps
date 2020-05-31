@@ -1,5 +1,12 @@
-import { User } from './User';
-import { Company } from './Company';
+// Instructions to every other class
+// on how they can be an argumento to 'addMarker'
+
+interface Mappable {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
 
 export class CustomMap {
   private googleMap: google.maps.Map;
@@ -14,12 +21,14 @@ export class CustomMap {
     });
   }
   // A class can be used as a class and as a type
-  addUserMarker(user: User): void {
+  // Using the OR operator, TypeScript only allow
+  // using properties that belongs to both User and Company
+  addMarker(mappable: Mappable): void {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng,
+        lat: mappable.location.lat,
+        lng: mappable.location.lng,
       },
     });
   }
