@@ -85114,6 +85114,7 @@ var User =
 /** @class */
 function () {
   function User() {
+    this.color = 'red';
     this.name = faker_1.default.name.firstName();
     this.location = {
       lat: parseFloat(faker_1.default.address.latitude()),
@@ -85149,6 +85150,7 @@ var Company =
 /** @class */
 function () {
   function Company() {
+    this.color = 'red';
     this.companyName = faker_1.default.company.companyName();
     this.catchPhrase = faker_1.default.company.catchPhrase();
     this.location = {
@@ -85165,7 +85167,6 @@ function () {
 }();
 
 exports.Company = Company;
-;
 },{"faker":"node_modules/faker/index.js"}],"src/CustomMap.ts":[function(require,module,exports) {
 "use strict"; // Instructions to every other class
 // on how they can be an argumento to 'addMarker'
